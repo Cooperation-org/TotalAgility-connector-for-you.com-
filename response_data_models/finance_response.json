@@ -1,0 +1,88 @@
+{
+  "title": "Finance Research API Response",
+  "description": "Response shape for You.com Finance Research API — returns finance-grade research answer with inline citations and source list.",
+  "type": "object",
+  "properties": {
+    "output": {
+      "type": "object",
+      "description": "The research output containing the answer and sources.",
+      "properties": {
+        "content": {
+          "type": "string",
+          "description": "Markdown-formatted finance research answer with inline citations [[1, 2]] referencing the sources array. Max length ~50,000 chars.",
+          "example": "**NVIDIA FY2025 Revenue Analysis**\n\n**Key drivers:**\n- **Data Center revenue** up 142% to $47.5B, driven by Hopper architecture demand for LLMs and generative AI [[1]]\n- **Compute & Networking** up 145%, with Blackwell production systems shipping in Q4 [[1]]\n- **Gaming** up 9% on GeForce RTX 40 Series adoption [[2]]"
+        },
+        "content_type": {
+          "type": "string",
+          "enum": ["text"],
+          "description": "Always 'text' — the content field contains Markdown-formatted text.",
+          "example": "text"
+        },
+        "sources": {
+          "type": "array",
+          "description": "List of web sources used to generate the answer. Each source is cited inline using [[1]], [[2]] notation in the content field.",
+          "items": {
+            "type": "object",
+            "properties": {
+              "url": {
+                "type": "string",
+                "description": "URL of the source webpage that was read and cited.",
+                "example": "https://investor.nvidia.com/financial-info/financial-reports/default.aspx"
+              },
+              "title": {
+                "type": "string",
+                "description": "Title of the source webpage.",
+                "example": "NVIDIA Corporation - Financial Reports"
+              },
+              "snippets": {
+                "type": "array",
+                "description": "Relevant excerpts from this source that were used in generating the answer.",
+                "items": {
+                  "type": "string",
+                  "example": "Revenue for fiscal year 2025 ended January 26, 2025 was $130.5B, up 114% year over year."
+                }
+              }
+            },
+            "required": ["url", "title"]
+          }
+        }
+      },
+      "required": ["content", "content_type", "sources"]
+    }
+  },
+  "required": ["output"],
+  "example": {
+    "output": {
+      "content": "**Gross margin comparison (gross margin % = gross profit / revenue) for the last three fiscal years:**\n\n| Company | FY2025 | FY2024 | FY2023 | Takeaway |\n|---|---:|---:|---:|---|\n| **Microsoft** | **68.8%** — $193.893B gross margin / $281.724B revenue [[2]] | **69.8%** — $171.008B / $245.122B [[2]] | **68.9%** — $146.052B / $211.915B [[2]] | Highest margins, broadly stable. |\n| **Google / Alphabet** | **59.7%** [[3]] | **58.2%** [[3]] | **56.6%** [[3]] | Middle, improving each year. |\n| **Apple** | **46.9%** [[1]] | **46.2%** [[1]] | **44.1%** [[1]] | Lowest of the three, steadily improving. |",
+      "content_type": "text",
+      "sources": [
+        {
+          "url": "https://fintel.io/doc/sec-apple-inc-320193-10k-2025-october-31-20392-514",
+          "title": "Apple Inc. - 10K - Annual Report - October 31, 2025",
+          "snippets": [
+            "Gross margin for fiscal 2025 was 46.9% compared to 46.2% in fiscal 2024"
+          ]
+        },
+        {
+          "url": "https://s2.q4cdn.com/470004039/files/doc_financials/2025/ar/_10-K-2025-As-Filed.pdf",
+          "title": "United States Securities and Exchange Commission - Apple 10-K 2025",
+          "snippets": [
+            "Apple's fiscal 2025 revenue was $391.0B with gross margin of $183.6B"
+          ]
+        },
+        {
+          "url": "https://www.microsoft.com/en-us/Investor/earnings/earnings-press-release",
+          "title": "Microsoft Q2 FY2025 Earnings Press Release",
+          "snippets": [
+            "Microsoft gross margin for FY2025 was 68.8% on revenue of $281.7B"
+          ]
+        }
+      ]
+    }
+  },
+  "notes": {
+    "finance_research_vs_research": "The Finance Research API returns the same response shape as the Research API, but uses a finance-optimized index: SEC filings, earnings reports, analyst coverage, market data, financial news. Use Finance Research for company analysis, earnings summaries, competitive benchmarking, due diligence, and macroeconomic research. Use Research API for general-purpose research or when you need source_control or output_schema parameters.",
+    "citations": "Inline citations [[1, 2]] in the content field reference items in the sources array by their zero-based index. Always follow citations to primary sources for compliance-sensitive use cases.",
+    "max_input_length": "The input field accepts up to 40,000 characters. Responses can be up to ~50,000 characters."
+  }
+}

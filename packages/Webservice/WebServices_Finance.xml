@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ArrayOfWebService xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <WebService>
+    <WebServiceIdentity>
+      <Id>9A3B5C7D2E8F4H6J8L0M1N2O3P4Q5R6T</Id>
+      <AutomaticallyPopulate>true</AutomaticallyPopulate>
+      <Name>youcom finance research</Name>
+      <LatestProxyDllName />
+    </WebServiceIdentity>
+    <CategoryIdentity>
+      <Id>E3DFBD4C583346E69A5C12A99DD21EE6</Id>
+      <AutomaticallyPopulate>true</AutomaticallyPopulate>
+      <Name />
+      <Description />
+    </CategoryIdentity>
+    <ProxyDllName />
+    <WebServiceSettings>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;WebServiceSettingsEntity xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;
+  &lt;UserName /&gt;
+  &lt;Password /&gt;
+  &lt;WcfEnabled&gt;false&lt;/WcfEnabled&gt;
+  &lt;RestfulWebService&gt;true&lt;/RestfulWebService&gt;
+  &lt;EndPointUrl /&gt;
+  &lt;HttpHeaders&gt;
+    &lt;HttpHeader&gt;
+      &lt;Name&gt;X-API-Key&lt;/Name&gt;
+      &lt;Value /&gt;
+    &lt;/HttpHeader&gt;
+    &lt;HttpHeader&gt;
+      &lt;Name&gt;Content-Type&lt;/Name&gt;
+      &lt;Value&gt;application/json&lt;/Value&gt;
+    &lt;/HttpHeader&gt;
+  &lt;/HttpHeaders&gt;
+  &lt;OpenAPIEnabled&gt;false&lt;/OpenAPIEnabled&gt;
+  &lt;UseClientCertificate&gt;false&lt;/UseClientCertificate&gt;
+  &lt;ClientCertificate&gt;
+    &lt;CertificateChanged&gt;false&lt;/CertificateChanged&gt;
+    &lt;PasswordChanged&gt;false&lt;/PasswordChanged&gt;
+  &lt;/ClientCertificate&gt;
+  &lt;CredentialsExternalStorage&gt;false&lt;/CredentialsExternalStorage&gt;
+  &lt;CredentialsSecretNameVars /&gt;
+  &lt;PasswordChanged&gt;false&lt;/PasswordChanged&gt;
+  &lt;RemoveExpect100ContinueHeader&gt;false&lt;/RemoveExpect100ContinueHeader&gt;
+&lt;/WebServiceSettingsEntity&gt;</WebServiceSettings>
+    <LastModifiedDate>0001-01-01T00:00:00</LastModifiedDate>
+    <OverwriteExisting>false</OverwriteExisting>
+    <ServiceUrl>https://api.you.com/v1/finance_research</ServiceUrl>
+  </WebService>
+</ArrayOfWebService>

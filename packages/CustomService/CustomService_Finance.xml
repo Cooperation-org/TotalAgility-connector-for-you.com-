@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ArrayOfCustomService xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <CustomService>
+    <Identity>
+      <Id>9A3B5C7D2E8F4H6J8L0M1N2O3P4Q5R6S</Id>
+      <Name>you.com finance research</Name>
+      <Version>1</Version>
+      <Group>
+        <Id>BFE28D4D6B3942C08698070D0F96D0FB</Id>
+        <Name>Agent Services</Name>
+      </Group>
+    </Identity>
+    <Category>
+      <Id>E3DFBD4C583346E69A5C12A99DD21EE6</Id>
+      <AutomaticallyPopulate>true</AutomaticallyPopulate>
+      <Name />
+      <Description />
+    </Category>
+    <Data>
+      <Owner />
+      <Inputs>
+        <ParameterDetails>
+          <name>INPUT</name>
+          <type>8</type>
+          <description>financial_research_question</description>
+          <errorCodeMappingType>Static</errorCodeMappingType>
+          <variableAccessScope>Public</variableAccessScope>
+        </ParameterDetails>
+        <ParameterDetails>
+          <name>RESEARCH_EFFORT</name>
+          <type>8</type>
+          <description>research_effort</description>
+          <errorCodeMappingType>Static</errorCodeMappingType>
+          <variableAccessScope>Public</variableAccessScope>
+        </ParameterDetails>
+      </Inputs>
+      <Outputs>
+        <ParameterDetails>
+          <name>FINANCE_RESPONSE_DATA</name>
+          <type>32748</type>
+          <description>finance_response_data</description>
+          <errorCodeMappingType>Static</errorCodeMappingType>
+          <variableAccessScope>Public</variableAccessScope>
+        </ParameterDetails>
+        <ParameterDetails>
+          <name>STATUS_CODE</name>
+          <type>3</type>
+          <description>status_code</description>
+          <errorCodeMappingType>Static</errorCodeMappingType>
+          <variableAccessScope>Public</variableAccessScope>
+        </ParameterDetails>
+      </Outputs>
+    </Data>
+    <LastModifiedDate>2026-05-16T00:00:00.000</LastModifiedDate>
+    <LastModifiedBy>
+      <Id>F3E1C05736E440D68E0E2E5AB2456544</Id>
+      <AutomaticallyPopulate>true</AutomaticallyPopulate>
+      <ResourceType>Worker</ResourceType>
+      <EmailAddress />
+      <UserId />
+      <ManagerialLevel>0</ManagerialLevel>
+    </LastModifiedBy>
+  </CustomService>
+</ArrayOfCustomService>
