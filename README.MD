@@ -107,6 +107,8 @@ The **REST API** approach gives full programmatic control over You.com's service
 
 The sample package provided includes REST integrations packaged as TotalAgility Custom Services, and an example showing how to use the search Custom Service in a TotalAgility Agent.
 
+Finance Research is now included alongside Search, Research, and Content as a Custom Service in this connector.
+
 ### Authentication
 
 All REST API calls require an API key passed via the `X-API-Key` header:
@@ -136,6 +138,7 @@ The following You.com API methods are used to provide the TotalAgility Custom Se
 | you.com web search | Search | `GET` | Web search with AI snippets |
 | you.com research | Research | `POST` | Deep research with citations |
 | you.com content | Content | `POST` | Content retrieval from live web data |
+| you.com finance research | Finance Research | `POST` | Finance-optimized deep research |
 
 > Full API reference & quickstart: <https://docs.you.com/quickstart>
 
@@ -166,9 +169,11 @@ The following You.com API methods are used to provide the TotalAgility Custom Se
 | you.com web search | Custom service | Returns real-time, LLM-ready web and news results |
 | you.com research | Custom service | Multi-step reasoning with advanced web research capabilities |
 | you.com content | Custom service | Retrieves HTML or Markdown content from any webpage |
+| you.com finance research | Custom service | Finance-grade research with multi-step reasoning over SEC filings, earnings reports, financial news |
 | youcom web search | Web service definition | REST service reference for the Search API (HTTP GET) |
 | youcom research | Web service definition | REST service reference for the Research API (HTTP POST) |
 | youcom content | Web service definition | REST service reference for the Content API (HTTP POST) |
+| youcom finance research | Web service definition | REST service reference for the Finance Research API (HTTP POST) |
 | Web Search Summariser Agent | Process | Example agent process demonstrating the Search API integration |
 | Web Search Summariser Example Chat Agent | Form | Example chat form wired to the Web Search Summariser Agent |
 
