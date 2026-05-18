@@ -1,0 +1,180 @@
+{
+  "info": {
+    "name": "You.com API (TotalAgility Connector)",
+    "description": "Postman collection for You.com Finance Research API. Used with TotalAgility connector package.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "base_url_search",
+      "value": "https://ydc-index.io/v1"
+    },
+    {
+      "key": "base_url_research",
+      "value": "https://api.you.com/v1"
+    },
+    {
+      "key": "api_key",
+      "value": "<YOUR_API_KEY>"
+    }
+  ],
+  "item": [
+    {
+      "name": "Finance Research API",
+      "item": [
+        {
+          "name": "Finance Research",
+          "request": {
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-API-Key",
+                  "type": "header"
+                },
+                {
+                  "key": "value",
+                  "value": "{{api_key}}",
+                  "type": "header"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"input\": \"What were the key drivers of NVIDIA's (NVDA) revenue growth in fiscal year 2025?\",\n  \"research_effort\": \"deep\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url_research}}/finance_research",
+              "host": ["{{base_url_research}}"],
+              "path": ["finance_research"]
+            },
+            "description": "Finance-grade research for financial questions — earnings analysis, competitive benchmarking, due diligence, macroeconomic research. Optimized index: SEC filings, earnings reports, market data, financial news."
+          },
+          "response": []
+        },
+        {
+          "name": "Finance Research — Earnings Analysis",
+          "request": {
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-API-Key",
+                  "type": "header"
+                },
+                {
+                  "key": "value",
+                  "value": "{{api_key}}",
+                  "type": "header"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"input\": \"Summarize Microsoft's Q2 FY2025 earnings results — revenue, segment performance, guidance, and analyst reaction\",\n  \"research_effort\": \"deep\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url_research}}/finance_research",
+              "host": ["{{base_url_research}}"],
+              "path": ["finance_research"]
+            },
+            "description": "Earnings analysis use case — summarize quarterly results without manually reading press release and earnings call transcript."
+          },
+          "response": []
+        },
+        {
+          "name": "Finance Research — Competitive Benchmarking",
+          "request": {
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-API-Key",
+                  "type": "header"
+                },
+                {
+                  "key": "value",
+                  "value": "{{api_key}}",
+                  "type": "header"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"input\": \"Compare the free cash flow generation and capital allocation strategies of Apple, Microsoft, and Alphabet over the past three fiscal years\",\n  \"research_effort\": \"deep\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url_research}}/finance_research",
+              "host": ["{{base_url_research}}"],
+              "path": ["finance_research"]
+            },
+            "description": "Competitive benchmarking — compare companies across financial metrics and business model characteristics."
+          },
+          "response": []
+        },
+        {
+          "name": "Finance Research — Exhaustive (Deep Dive)",
+          "request": {
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-API-Key",
+                  "type": "header"
+                },
+                {
+                  "key": "value",
+                  "value": "{{api_key}}",
+                  "type": "header"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"input\": \"Analyze Boeing's revenue recognition policy changes in its most recent annual report and compare to previous year\",\n  \"research_effort\": \"exhaustive\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url_research}}/finance_research",
+              "host": ["{{base_url_research}}"],
+              "path": ["finance_research"]
+            },
+            "description": "Use exhaustive research effort for complex financial research tasks — full 10-K analysis, cross-market research."
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}
