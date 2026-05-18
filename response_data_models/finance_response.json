@@ -83,6 +83,7 @@
   "notes": {
     "finance_research_vs_research": "The Finance Research API returns the same response shape as the Research API, but uses a finance-optimized index: SEC filings, earnings reports, analyst coverage, market data, financial news. Use Finance Research for company analysis, earnings summaries, competitive benchmarking, due diligence, and macroeconomic research. Use Research API for general-purpose research or when you need source_control or output_schema parameters.",
     "citations": "Inline citations [[1, 2]] in the content field reference items in the sources array by their zero-based index. Always follow citations to primary sources for compliance-sensitive use cases.",
-    "max_input_length": "The input field accepts up to 40,000 characters. Responses can be up to ~50,000 characters."
+    "max_input_length": "The input field accepts up to 40,000 characters. Responses can be up to ~50,000 characters.",
+    "live_verification": "Schema verified against a live POST https://api.you.com/v1/finance_research call on 2026-05-18 (research_effort=standard, input='Summarize NVIDIA Q4 FY2025 earnings'). HTTP 200 in ~186s, 1696-byte response. Top-level wrapper 'output' confirmed, with fields 'content' (string), 'content_type' ('text'), and 'sources[]' containing {url, title}. The 'snippets' field is optional and was absent in this response — schema already marks it as not required. Note: research_effort='low' is rejected (422); the API accepts only 'ulow', 'lite', 'standard', 'deep', or 'exhaustive'. Fixture: E:/youdotcom/workspace/projects/proposals/global-ecosystem/research/fixtures/finance-response-2026-05-18.json."
   }
 }
