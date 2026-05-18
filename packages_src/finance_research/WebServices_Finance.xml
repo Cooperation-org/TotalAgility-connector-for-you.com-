@@ -42,7 +42,7 @@
   &lt;PasswordChanged&gt;false&lt;/PasswordChanged&gt;
   &lt;RemoveExpect100ContinueHeader&gt;false&lt;/RemoveExpect100ContinueHeader&gt;
 &lt;/WebServiceSettingsEntity&gt;</WebServiceSettings>
-    <LastModifiedDate>0001-01-01T00:00:00</LastModifiedDate>
+    <LastModifiedDate>2026-05-18T00:00:00</LastModifiedDate>
     <OverwriteExisting>false</OverwriteExisting>
     <ServiceUrl>https://api.you.com/v1/finance_research</ServiceUrl>
   </WebService>
