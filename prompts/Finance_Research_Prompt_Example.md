@@ -64,10 +64,17 @@ What changes did Boeing make to its revenue recognition policies in its most rec
 
 ## Research Effort Levels
 
+The Finance Research API accepts five effort levels (verified live 2026-05-18 against `api.you.com/v1/finance_research`):
+
 | Level | When to Use |
 |-------|-------------|
-| `deep` | Most financial questions — earnings summaries, multi-company comparisons, sector research |
+| `ulow` | Fastest, cheapest — single-fact lookups, definitional queries |
+| `lite` | Light synthesis — single-company quick summaries |
+| `standard` | **Recommended default** — most earnings summaries, single-company analysis |
+| `deep` | Multi-company comparisons, sector research, detailed metric breakdowns |
 | `exhaustive` | Complex cross-market research, full 10-K analysis, highest quality needed |
+
+Sending any other value returns HTTP 422 with message: *"Input should be 'ulow', 'lite', 'standard', 'deep' or 'exhaustive'"*.
 
 ---
 
@@ -82,6 +89,6 @@ What changes did Boeing make to its revenue recognition policies in its most rec
 
 In TotalAgility, the Finance Research service maps:
 - `INPUT` → the research question (multiline, max 40,000 chars)
-- `RESEARCH_EFFORT` → `deep` or `exhaustive` (dropdown)
+- `RESEARCH_EFFORT` → one of `ulow` / `lite` / `standard` / `deep` / `exhaustive` (dropdown; default `deep`)
 - `FINANCE_RESPONSE_DATA` → the full `output.content` markdown response
 - `STATUS_CODE` → HTTP response code for error handling
